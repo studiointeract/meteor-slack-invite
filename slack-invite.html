@@ -2,7 +2,7 @@
   {{#unless invite}}
   <form>
     <div class="slack-info">
-      <p>Join <strong>SpaceTalk</strong> on Slack.<br />
+      <p>Join <strong>{{slack.name}}</strong> on Slack.<br />
       <strong>{{slack.online}}</strong> users online now of <strong>{{slack.registered}}</strong> registered.</p>
     </div>
     <input type="email" placeholder="you@yourdomain.com" />
@@ -12,6 +12,6 @@
   <div class="message error">{{error}}</div>
   {{/if}}
   {{else}}
-  <div class="message">Success! Check your email for an invite from Slack.</div>
+  <div class="message">Success! Check your email for an invite from {{slack.name}} on Slack.</div>
   {{/unless}}
 </template>

@@ -2,7 +2,7 @@ Package.describe({
   name: 'studiointeract:slack-invite',
   version: '1.0.0',
   // Brief, one-line summary of the package.
-  summary: 'Template and form to add a slack invite box on your app.',
+  summary: 'Template and form to add a Slack invite box on your app.',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/studiointeract/meteor-slack-invite',
   // By default, Meteor will default to using README.md for documentation.

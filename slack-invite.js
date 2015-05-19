@@ -2,23 +2,27 @@ Slack = new Mongo.Collection('slack');
 
 Meteor.methods({
   invite: function(email) {
-    if (!this.isSimulation) {
-      var url = "https://spacetalk.slack.com/api/users.admin.invite";
-      var data = {
-        email: email,
-        token: Meteor.settings.slackToken,
-        set_active: true
-      };
+    if (!this.isSimulation && Slack.find().count() === 1) {
+      var domain = Slack.findOne().domain;
 
-      try {
-        var data = HTTP.call("POST", url, {
-          params: data
-        }).data;
-      } catch(e) {
-        console.log(e);
+      if (domain) {
+        var url = "https://" + domain + ".slack.com/api/users.admin.invite";
+        var data = {
+          email: email,
+          token: Meteor.settings.slackToken,
+          set_active: true
+        };
+
+        try {
+          var data = HTTP.call("POST", url, {
+            params: data
+          }).data;
+        } catch(e) {
+          console.log(e);
+        }
+
+        return data;
       }
-
-      return data;
     }
   }
 });
@@ -40,14 +44,17 @@ if (Meteor.isServer) {
             online: active,
             registered: total
           };
+          // Extend data with team info.
+          _.extend(data, _.pick(res.data.team, 'name', 'domain'));
 
+          // Upsert data in Mongo.
           Slack.upsert({_id: 'slack'}, data);
         }
       });
     } catch(e) {
       console.log(e);
     }
-  }, 1000);
+  }, 30000);
 
   Meteor.publish('slack', function() {
     return Slack.find();
