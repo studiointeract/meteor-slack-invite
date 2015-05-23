@@ -2,6 +2,8 @@
 
 Inspired by [Slackin](https://github.com/rauchg/slackin) but built for Meteor using Meteor sub projects.
 
+### [DEMO](http://spacetalkapp.com) – We use it on the [SpaceTalk Homepage](http://spacetalkapp.com)
+
 ## Installation
 
 ```
