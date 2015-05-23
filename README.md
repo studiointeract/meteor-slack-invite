@@ -20,3 +20,10 @@ Add that token together with your teamname i your settings.json file. (Don't for
   "slackToken": "___REAPLACE_WITH_TOKEN___",
 }
 ```
+
+Add to your template like this:
+
+```html
+  {{> slackInvite}}
+```
+
