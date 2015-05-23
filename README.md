@@ -1,6 +1,8 @@
 # Slack Invite for Meteor
 
-Inspired by [Slackin](https://github.com/rauchg/slackin) but built for Meteor using Meteor sub projects.
+Inspired by [Slackin](https://github.com/rauchg/slackin) but built for Meteor – using Meteor DDP, Mongo and Spacebars.
+
+### [DEMO](http://spacetalkapp.com) – We use it on the [SpaceTalk Homepage](http://spacetalkapp.com)
 
 ## Installation
 
@@ -20,3 +22,10 @@ Add that token together with your teamname i your settings.json file. (Don't for
   "slackToken": "___REAPLACE_WITH_TOKEN___",
 }
 ```
+
+Add to your template like this:
+
+```html
+  {{> slackInvite}}
+```
+
