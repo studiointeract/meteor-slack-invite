@@ -1,6 +1,6 @@
 # Slack Invite for Meteor
 
-Inspired by [Slackin](https://github.com/rauchg/slackin) but built for Meteor, using Meteor DDP, Mongo and Spacebars.
+Inspired by [Slackin](https://github.com/rauchg/slackin) but built for Meteor – using Meteor DDP, Mongo and Spacebars.
 
 ### [DEMO](http://spacetalkapp.com) – We use it on the [SpaceTalk Homepage](http://spacetalkapp.com)
 
