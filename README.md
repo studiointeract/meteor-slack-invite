@@ -26,6 +26,5 @@ Add that token together with your teamname i your settings.json file. (Don't for
 Add to your template like this:
 
 ```html
-  {{> slackInvite}}
+{{> slackInvite}}
 ```
-
