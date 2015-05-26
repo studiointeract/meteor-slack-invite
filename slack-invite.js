@@ -41,6 +41,7 @@ if (Meteor.isServer) {
           }).length;
 
           var data = {
+            _id: 'slack',
             online: active,
             registered: total
           };
@@ -57,7 +58,7 @@ if (Meteor.isServer) {
   }, 30000);
 
   Meteor.publish('slack', function() {
-    return Slack.find();
+    return Slack.find({_id:'slack'});
   });
 }
 else {
