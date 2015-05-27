@@ -30,3 +30,30 @@ Meteor.setInterval(function() {
 Meteor.publish('slack', function() {
   return Slack.find({_id:'slack'});
 });
+
+Meteor.methods({
+  invite: function(email) {
+    if (!this.isSimulation && Slack.find().count() === 1) {
+      var domain = Slack.findOne().domain;
+
+      if (domain) {
+        var url = "https://" + domain + ".slack.com/api/users.admin.invite";
+        var data = {
+          email: email,
+          token: Meteor.settings.slackToken,
+          set_active: true
+        };
+
+        try {
+          var data = HTTP.call("POST", url, {
+            params: data
+          }).data;
+        } catch(e) {
+          console.log(e);
+        }
+
+        return data;
+      }
+    }
+  }
+});
