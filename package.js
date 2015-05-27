@@ -1,6 +1,6 @@
 Package.describe({
   name: 'studiointeract:slack-invite',
-  version: '1.0.3',
+  version: '1.0.4',
   // Brief, one-line summary of the package.
   summary: 'Template and form to add a Slack invite box on your app.',
   // URL to the Git repository containing the source code for this package.
@@ -24,6 +24,7 @@ Package.onUse(function(api) {
 
   api.addFiles('slack-invite.html', 'client');
   api.addFiles('slack-invite.js');
+  api.addFiles('slack-invite-server.js', 'server');
 });
 
 Package.onTest(function(api) {
