@@ -14,7 +14,7 @@ meteor add studiointeract:slack-invite
 
 First [create a token for your Slack team here.](https://api.slack.com/web)
 
-Add that token together with your teamname i your settings.json file. (Don't forget to start Meteor using it, if you're testing it locally, i.e. meteor --settings settings.json).
+Add that token in your settings.json file. (Don't forget to start Meteor using it, if you're testing it locally, i.e. meteor --settings settings.json).
 
 **Example settings.json**
 ```js
